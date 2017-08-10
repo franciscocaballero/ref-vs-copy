@@ -59,11 +59,30 @@ console.log(players, team2, team3);
     // captain.age = 99;
 
     // how do we take a copy instead?
-    /// this is how to make a copy 
+    /// this is how to make a copy
     const cap2 = Object.assign({}, person, { number: 99});
     console.log(cap2);
     // We will hopefully soon see the object ...spread
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+    const cisco = {
+      name: 'cisco',
+      age: 22,
+      social: {
+        twitter: '@ciscocaballero',
+        website: 'ciscocaballero.com'
+      }
+    }
+    console.clear();
+    console.log(cisco);
+
+    const dev = Object.assign({}, cisco);
+    dev.social.twitter = '@blahblah';
+
+    /// 'poor mans deep clone'
+
+    const dev2 = JSON.parse(JSON.stringify(cisco));
+    console.log(dev2);
   </script>
 
 </body>
